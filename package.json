@@ -1,0 +1,9 @@
+{
+  "name": "selenium-training",
+  "version": "1.0.0",
+  "private": true,
+  "dependencies": {
+    "selenium-webdriver": "3.0.0-beta-3",
+    "mocha": "3.1.0"
+  }
+}
