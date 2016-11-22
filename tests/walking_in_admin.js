@@ -1,7 +1,6 @@
 var webdriver = require('selenium-webdriver'),
     By = webdriver.By,
     test = require('selenium-webdriver/testing'),
-    assert = require('selenium-webdriver/testing/assert'),
     common = require('../utils/common');
 
 test.describe('Проход по всем разделам админки', function () {
