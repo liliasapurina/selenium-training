@@ -4,7 +4,7 @@ var webdriver = require('selenium-webdriver'),
     chai = require('chai'),
     assert = chai.assert;
 
-test.describe('Проверка наличия стикеров у товаров', function () {
+test.describe('Проверка страниц с товаром', function () {
   var driver;
 
   test.before(function () {
