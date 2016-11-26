@@ -20,10 +20,12 @@ module.exports = {
   /*
    Имитация цикла for для асинхронных действий
    */
-  forStartToEnd : function (start, end, todo) {
-    if (start <= end) {
-      todo(start);
-      this.forStartToEnd(start + 1, end, todo);
+  forStartToEnd : function (args, todo) {
+    if (args.start <= args.end) {
+      todo(args);
+
+      args.start++;
+      this.forStartToEnd(args, todo);
     }
   }
 

@@ -32,20 +32,20 @@ test.describe('Проход по всем разделам админки', func
         .then(function (elements) {
           var menuLength = elements.length;
 
-          common.forStartToEnd(1, menuLength, function (i) {
+          common.forStartToEnd({start: 1, end: menuLength}, function (args1) {
             // Выюор пункта мею
-            var menu = driver.findElement(By.id('box-apps-menu')).findElement(By.xpath('./li[' + i + ']'));
+            var menu = driver.findElement(By.id('box-apps-menu')).findElement(By.xpath('./li[' + args1.start + ']'));
             menu.getText().then(function(text){
               console.info('Нажат пункт: ' + text);
             });
             menu.click();
-            driver.findElement(By.id('box-apps-menu')).findElements(By.xpath('./li[' + i + ']//li'))
+            driver.findElement(By.id('box-apps-menu')).findElements(By.xpath('./li[' + args1.start + ']//li'))
                 .then(function (elements) {
                   var subMenuLength = elements.length;
 
-                  common.forStartToEnd(1, subMenuLength, function (j) {
+                  common.forStartToEnd({start: 1, end: subMenuLength}, function (args2) {
                     // Выбор подпункта меню
-                    var subMenu = driver.findElement(By.id('box-apps-menu')).findElement(By.xpath('./li[' + i + ']//li[' + j + ']'));
+                    var subMenu = driver.findElement(By.id('box-apps-menu')).findElement(By.xpath('./li[' + args1.start + ']//li[' + args2.start + ']'));
                     subMenu.getText().then(function(text){
                       console.info('Нажат подпункт: ' + text);
                     });

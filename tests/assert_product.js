@@ -33,7 +33,7 @@ test.describe('Проверка страниц с товаром', function () {
         newPriseStyle.then(function (newPrice) {
           assert.equal(newPrice[0], 'rgba(204, 0, 0, 1)', 'Новая цена не красная');
           assert.equal(newPrice[2], 'bold', 'Новая цена не выделена жирным');
-          assert.isAtLeast(newPrice[1], oldPrice[1], 'Новая цена меньше старой цены');
+          assert.isAtLeast(newPrice[1], oldPrice[1], 'Новая цена больше старой цены');
         });
       });
 

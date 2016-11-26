@@ -51,15 +51,15 @@ test.describe('Проверка наличия стикеров у товаро�
     boxes.then(function (boxes) {
       var boxesCount = boxes.length;
 
-      common.forStartToEnd(1, boxesCount, function (i) {
-        var box = content.findElement(By.xpath('//*[contains(@class,"box")][' + i + ']'));
+      common.forStartToEnd({start: 1, end: boxesCount}, function (args1) {
+        var box = content.findElement(By.xpath('//*[contains(@class,"box")][' + args1.start + ']'));
 
         box.findElements(By.css('.product'))
             .then(function (ducks) {
               var ducksLength = ducks.length;
 
-              common.forStartToEnd(1, ducksLength, function (j) {
-                var duck = box.findElement(By.css('.product:nth-child(' + j + ')'));
+              common.forStartToEnd({start: 1, end: ducksLength}, function (args2) {
+                var duck = box.findElement(By.css('.product:nth-child(' + args2.start + ')'));
 
                 duck.findElement(By.css('.name')).getText().then(function (text) {
                   duck.findElements(By.css('.sticker')).then(function (stickers) {
