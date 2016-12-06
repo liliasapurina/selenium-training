@@ -65,7 +65,7 @@ test.describe('Проверка переходов по ссылкам', functio
   });
 
   test.after(function () {
-    // driver.quit();
+    driver.quit();
   });
 
 });
