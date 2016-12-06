@@ -27,6 +27,20 @@ module.exports = {
       args.start++;
       this.forStartToEnd(args, todo);
     }
+  },
+
+  /*
+   Поиск добавленного в массив элемента
+   */
+  diffArrays : function (A, B) {
+    var elem;
+
+    B.forEach(function (item) {
+      if (A.indexOf(item) === -1) {
+        elem = item;
+      }
+    });
+    return elem;
   }
 
 };
