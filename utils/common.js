@@ -2,7 +2,26 @@
  * Файл со вспомогательными методами
  */
 
+var webdriver = require('selenium-webdriver');
+
 module.exports = {
+
+  /*
+   Инициализация драйвера
+   */
+  init: function(browser) {
+    global.By = webdriver.By;
+    global.driver = new webdriver.Builder()
+        .forBrowser(browser)
+        .build();
+  },
+
+  /**
+   * Завершение работы драйвера
+   */
+  end: function() {
+    driver.quit();
+  },
 
   /*
    Генерация уникального email
